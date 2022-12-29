@@ -1,0 +1,61 @@
+/*Implement a class Complex which represents the Complex Number data type.
+Implement the following operations:
+1. Constructor (including a default constructor which creates the complex number (0+0i).
+2. Overloaded operator+ to add two complex numbers.
+3. Overloaded operator* to multiply two complex numbers.
+4. Overloaded << and >>to print and read Complex Numbers.*/
+#include<iostream>
+using namespace std;
+class Complex
+{
+private:
+int real,img;
+public:
+Complex()
+{
+real = 0;
+img = 0;
+}
+Complex operator + (Complex b)
+{
+class Complex a;
+a.real = real + b.real;
+a.img = img + b.img;
+return(a);
+}
+Complex operator * (Complex b)
+{
+class Complex multi;
+multi.real = real * b.real;
+multi.img = img * b.img;
+return (multi);
+}
+friend istream &operator >> (istream &input,Complex &com)
+{
+cout<<"Enter real part : ";
+input>>com.real;
+cout<<"Enter img part : ";
+input>>com.img;
+}
+friend ostream &operator << (ostream &output,Complex &com)
+{
+output<<com.real<<" + "<<com.img<<"i\n";
+}
+};
+int main()
+{
+Complex i1,i2,i3,i4;
+cin>>i1;
+cin>>i2;
+i3 = i1+i2;
+cout<<i3;
+i4 = i1*i2;
+cout<<i4;
+}
+Output
+Enter real part : 25
+Enter img part : 12
+Enter real part : 30
+Enter img part : 40
+55 + 52i
+750 + 480i
